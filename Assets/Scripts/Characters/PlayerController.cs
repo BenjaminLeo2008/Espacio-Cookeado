@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float horizontalMove;
     public float verticalMove;
     public CharacterController Player;
+    public float PlayerSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,6 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Player.Move(new Vector3(horizontalMove, 0, verticalMove));
+        Player.Move(new Vector3(horizontalMove, 0, verticalMove) * PlayerSpeed * Time.deltaTime);
     }
 }
